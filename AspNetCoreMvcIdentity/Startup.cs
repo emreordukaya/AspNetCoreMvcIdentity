@@ -40,6 +40,12 @@ namespace AspNetCoreMvcIdentity
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
 
+            // requires
+            // using Microsoft.AspNetCore.Identity.UI.Services;
+            // using WebPWrecover.Services;
+            services.AddTransient<IEmailSender, EmailSender>();
+            services.Configure<AuthMessageSenderOptions>(Configuration.GetSection("SendGridKeyName"));
+
             services.Configure<IdentityOptions>(options =>
             {
                 // Password settings.
