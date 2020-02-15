@@ -44,7 +44,7 @@ namespace AspNetCoreMvcIdentity
             // using Microsoft.AspNetCore.Identity.UI.Services;
             // using WebPWrecover.Services;
             services.AddTransient<IEmailSender, EmailSender>();
-            services.Configure<AuthMessageSenderOptions>(Configuration.GetSection("SendGridKeyName"));
+            services.Configure<AuthMessageSenderOptions>(Configuration.GetSection("< ApiKey Name >"));
 
             services.Configure<IdentityOptions>(options =>
             {
